@@ -3,10 +3,13 @@
 Answer the following questions below:
 
 - What is a JWT?
+A json web token is a way of sending data between client and server in a more secure way. If the payload is altered, the signature portion will not match. 
 
 - What is the signature portion of the JWT?  What does it do?
+The signature matches the payload and header when they are combined and encrypted. If these two do not match, then that means the payload was altered.
 
 - If a JWT is intercepted, can the attacker see what's inside the payload?
+The attacker can see inside the payload. 
 
 - How can you implement authentication with a JWT?  Describe how it works at a high level.
 
@@ -30,3 +33,4 @@ Answer the following questions below:
 
 - Did you prefer using Flask over Express? Why or why not (there is no right
   answer here --- we want to see how you think about technology)?
+  I prefer to make 

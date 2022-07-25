@@ -4,7 +4,6 @@ function timeWord(inputTime) {
     let outputTime = '';
 
     const leftDigit = {
-        '0': '',
         '1': 'ten',
         '2': 'twenty',
         '3': 'thirty',
@@ -14,7 +13,6 @@ function timeWord(inputTime) {
     }
 
     const rightDigit = {
-        '0': 'twelve',
         '1': 'one',
         '2': 'two',
         '3': 'three',
@@ -25,13 +23,14 @@ function timeWord(inputTime) {
     
     // add each digit in time to array
     for (i = 0; i < inputTime.length; i++) {
-        if (i in [0, 3]) {
+        if (inputTime[i] === undefined) {
+            outputTime += '';
+        } else if (i === 0 || i === 3) {
             outputTime += leftDigit[inputTime[i]] + ' ';
-        } else if (i in [1, 4]) {
+        } else if (i === 1 || i === 4) {
             outputTime += rightDigit[inputTime[i]] + ' ';
         }
 
-        console.log(leftDigit[inputTime[i]], rightDigit[inputTime[i]])
     }
 
     if (parseInt(inputTime.slice(0, 2)) < 12) {
